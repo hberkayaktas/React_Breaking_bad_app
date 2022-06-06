@@ -1,20 +1,22 @@
 import React from "react-dom";
 import { BrowserRouter, Routes, Route, Link  } from "react-router-dom";
 
+//Pages 
+import Home from "./Pages/Home";
 function App() {
   return (
     <BrowserRouter>
     <nav>
-      <h1>NAV</h1>
+      <h1>Navigation</h1>
       <ul className="list">
         <li>
-          <Link className={({ isActive }) => "nav-link" + (isActive ? " active" : "")} to="/">Home</Link>
+          <Link  to="/">Home</Link>
         </li>
         <li>
-          <Link className={({ isActive }) => "nav-link" + (isActive ? " active" : "")} to="/about">About</Link>
+          <Link  to="/about">About</Link>
         </li>
         <li>
-          <Link className={({ isActive }) => "nav-link" + (isActive ? " active" : "")} to="/users">Users</Link>
+          <Link  to="/users">Users</Link>
         </li>
       </ul>
     </nav>
@@ -28,13 +30,7 @@ function App() {
   );
 }
 
-function Home() {
-  return (
-    <div>
-     home
-    </div>
-  );
-}
+
 function About() {
   return (
     <div>
