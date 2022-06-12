@@ -27,7 +27,7 @@ function Home() {
     return <Error/>
   }
   return (
-    <div>
+    <div style={{marginTop:'0px'}}>
       <h1>Characters</h1>
       <Masonry
         breakpointCols={4}
