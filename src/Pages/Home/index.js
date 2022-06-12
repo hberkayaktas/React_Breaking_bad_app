@@ -10,6 +10,8 @@ import 'neum-ui/dist/index.css';
 
 function Home() {
   const characters = useSelector((state) => state.characters.persons);
+  const hasNextPage = useSelector((state) => state.characters.hasNextPage);
+  const nextPage = useSelector((state) => state.characters.page);
   const isLoading = useSelector((state) => state.characters.isLoading);
   const error = useSelector((state) => state.characters.error);
   const dispatch = useDispatch();
@@ -43,6 +45,12 @@ function Home() {
           </div>
         ))}
       </Masonry>
+
+      <div style={{padding: '20px 0 40px 0' , textAlign:'center'}}>
+        {isLoading && <Loading w={'50px'} h={'50px'} />}
+        {hasNextPage && !isLoading && <button onClick={() => dispatch(fetchCharacters(nextPage))}>Load more ({nextPage})</button>}
+        { !hasNextPage && <div>There nothing to be shown</div>}
+      </div>
     </div>
   );
 }
