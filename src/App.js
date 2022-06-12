@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Link  } from "react-router-dom";
 
 //Pages 
 import Home from "./Pages/Home";
+import Detail from "./Pages/Detail";
 function App() {
   return (
     <BrowserRouter>
@@ -24,6 +25,7 @@ function App() {
     <Routes>
       <Route path="/" exact element={<Home />} />
       <Route path="/about" element={<About />} />
+      <Route path="/char/:char_id" element={<Detail />} />
       <Route path="*" element={<> Error </>} />
     </Routes>
   </BrowserRouter>
