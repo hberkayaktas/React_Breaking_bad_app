@@ -3,8 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchCharacters } from "../../redux/charactersSlice";
 import Masonry from 'react-masonry-css';
 import './styles.css';
-import Loading from '../../components/Loading';
+
 import Error  from "../../components/Error";
+import { Loading } from "neum-ui";
+import 'neum-ui/dist/index.css';
+
 function Home() {
   const characters = useSelector((state) => state.characters.persons);
   const isLoading = useSelector((state) => state.characters.isLoading);
@@ -16,7 +19,7 @@ function Home() {
   }, [dispatch]);
   //console.log(data);
   if(isLoading){
-    return <Loading/>
+    return <Loading w={'50px'} h={'50px'} />
   }
   if(error){
     return <Error/>
