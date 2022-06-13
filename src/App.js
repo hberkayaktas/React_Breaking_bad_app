@@ -5,6 +5,7 @@ import "./App.css";
 import Home from "./Pages/Home";
 import Detail from "./Pages/Detail";
 import Quotes from "./Pages/Quotes";
+import QuoteDetail from "./Pages/QuoteDetail";
 function App() {
   return (
     <BrowserRouter>
@@ -30,6 +31,7 @@ function App() {
       <Route path="/about" element={<About />} />
       <Route path="/quotes" element={<Quotes />} />
       <Route path="/char/:char_id" element={<Detail />} />
+      <Route path="/quotes/:quote_id" element={<QuoteDetail />} />
       <Route path="*" element={<> Error </>} />
     </Routes>
   </BrowserRouter>
